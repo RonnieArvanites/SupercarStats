@@ -1,3 +1,5 @@
+This React application shows car stats of different supercars. The application uses react-router for the url routing and react-bootstrap for the UI layout. A demo of the React application can be seen at https://codesandbox.io/s/github/RonnieArvanites/SupercarStats/tree/master/cars.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
