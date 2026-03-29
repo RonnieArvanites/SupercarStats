@@ -10,11 +10,11 @@ export default function CarDetail({ cars }) {
     const selectedCar = cars.find(car => {
         return car.slug === slug
     });
-    
+
     const [mainImage, setMainImage] = useState(selectedCar ? selectedCar.thumbnail : '')
 
     //Page not found
-    if (!selectedCar){
+    if (!selectedCar) {
         return <CarNotFound></CarNotFound>;
     }
 
@@ -23,26 +23,39 @@ export default function CarDetail({ cars }) {
             <center>
                 <h1 className="car-header">{selectedCar.manufacturer} {selectedCar.name}</h1>
                 <Col>
-                        <Image className="main-picture" src={mainImage} width={650} height={490}></Image>
-                        <div className="white-fill"></div>
-                        <Row noGutters>
-                            <Col>
-                                <Image src={selectedCar.thumbnail} className="image-fill" onClick={() => setMainImage(selectedCar.thumbnail)}></Image>
-                            </Col>
-                            <Col>
-                                <Image src={selectedCar.rear_view_img_url} className="image-fill" onClick={() => setMainImage(selectedCar.rear_view_img_url)}></Image>
-                            </Col>
-                            <Col>
-                                <Image src={selectedCar.top_view_img_url} className="image-fill" onClick={() => setMainImage(selectedCar.top_view_img_url)}></Image>
-                            </Col>
-                            <Col>
-                                <Image src={selectedCar.interior_view_img_url} className="image-fill" onClick={() => setMainImage(selectedCar.interior_view_img_url)}></Image>
-                            </Col>
-                        </Row>
+                    <Image className="main-picture" src={mainImage} width={650} height={490}></Image>
+                    <div className="white-fill"></div>
+                    <Row className="g-0 selectable-images">
+                        <Col>
+                            <Image
+                                src={selectedCar.thumbnail}
+                                className={`leading-corner-radius image-fill ${mainImage === selectedCar.thumbnail ? 'selected' : ''}`}
+                                onClick={() => setMainImage(selectedCar.thumbnail)}
+                            ></Image>
+                        </Col>
+                        <Col>
+                            <Image
+                                src={selectedCar.rear_view_img_url}
+                                className={`image-fill ${mainImage === selectedCar.rear_view_img_url ? 'selected' : ''}`}
+                                onClick={() => setMainImage(selectedCar.rear_view_img_url)}></Image>
+                        </Col>
+                        <Col>
+                            <Image
+                                src={selectedCar.top_view_img_url}
+                                className={`image-fill ${mainImage === selectedCar.top_view_img_url ? 'selected' : ''}`}
+                                onClick={() => setMainImage(selectedCar.top_view_img_url)}></Image>
+                        </Col>
+                        <Col>
+                            <Image
+                                src={selectedCar.interior_view_img_url}
+                                className={`trailing-corner-radius image-fill ${mainImage === selectedCar.interior_view_img_url ? 'selected' : ''}`}
+                                onClick={() => setMainImage(selectedCar.interior_view_img_url)}></Image>
+                        </Col>
+                    </Row>
                     <Table className="stat-table" striped bordered variant="dark">
                         <tbody>
                             <tr>
-                                <td className="black-fill"  colSpan="2"> <center><h3>Car Stats</h3></center></td>
+                                <td className="black-fill" colSpan="2"> <center><h3>Car Stats</h3></center></td>
                             </tr>
                             <tr>
                                 <td>Year</td>
