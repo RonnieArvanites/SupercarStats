@@ -1,10 +1,11 @@
+import React from 'react'
 import { Container } from 'react-bootstrap'
 
 
 export default function Home() {
     return (
-        <div className='home'>
-            <h1 className="home-text">Which supercar will you choose?</h1>
-        </div>
+        <Container fluid="true" className='home'>
+                <h1 className="center-center">Which supercar will you choose?</h1>
+        </Container>
     );
 }

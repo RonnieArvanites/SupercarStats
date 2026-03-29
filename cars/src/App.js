@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css'
 import Home from './components/Home'
 import Lamborghini from './components/Lamborghini'
@@ -8,9 +9,9 @@ import About from './components/About'
 import CarDetail from './components/CarDetail'
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   NavLink,
-  Navigate,
+  Redirect,
   Route
 } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
@@ -20,7 +21,6 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 function App() {
   const cars = [
     {
-      id: 1,
       name: "Senna",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/Senna/thumbnail.jpg",
@@ -39,7 +39,6 @@ function App() {
       slug: "senna"
     },
     {
-      id: 2,
       name: "570S Spider",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/570S_Spider/thumbnail.jpg",
@@ -58,7 +57,6 @@ function App() {
       slug: "570S_spider"
     },
     {
-      id: 3,
       name: "GT",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/GT/thumbnail.jpg",
@@ -77,7 +75,6 @@ function App() {
       slug: "gt"
     },
     {
-      id: 4,
       name: "600LT",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/600LT/thumbnail.jpg",
@@ -96,7 +93,6 @@ function App() {
       slug: "600LT"
     },
     {
-      id: 5,
       name: "Speedtail",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/Speedtail/thumbnail.jpg",
@@ -115,7 +111,6 @@ function App() {
       slug: "speedtail"
     },
     {
-      id: 6,
       name: "720S",
       manufacturer: "McLaren",
       thumbnail: "../images/McLaren/720S/thumbnail.jpg",
@@ -134,7 +129,6 @@ function App() {
       slug: "720S"
     },
     {
-      id: 7,
       name: "Sian FKP 37",
       manufacturer: "Lamborghini",
       thumbnail: "../images/Lamborghini/Sain_FKP_37/thumbnail.jpg",
@@ -153,7 +147,6 @@ function App() {
       slug: "sian_fkp_37"
     },
     {
-      id: 8,
       name: "Aventador SVJ",
       manufacturer: "Lamborghini",
       thumbnail: "../images/Lamborghini/Aventador_SVJ/thumbnail.jpg",
@@ -172,7 +165,6 @@ function App() {
       slug: "aventador_svj"
     },
     {
-      id: 9,
       name: "Huracan Evo",
       manufacturer: "Lamborghini",
       thumbnail: "../images/Lamborghini/Huracan_Evo/thumbnail.jpg",
@@ -191,7 +183,6 @@ function App() {
       slug: "huracan_evo"
     },
     {
-      id: 10,
       name: "Veneno",
       manufacturer: "Lamborghini",
       thumbnail: "../images/Lamborghini/Veneno/thumbnail.jpg",
@@ -210,7 +201,6 @@ function App() {
       slug: "veneno"
     },
     {
-      id: 11,
       name: "Centenario",
       manufacturer: "Lamborghini",
       thumbnail: "../images/Lamborghini/Centenario/thumbnail.jpg",
@@ -229,7 +219,6 @@ function App() {
       slug: "centenario"
     },
     {
-      id: 12,
       name: "812 Superfast",
       manufacturer: "Ferrari",
       thumbnail: "../images/Ferrari/812_Superfast/thumbnail.jpg",
@@ -248,7 +237,6 @@ function App() {
       slug: "812_superfast"
     },
     {
-      id: 13,
       name: "LaFerrari",
       manufacturer: "Ferrari",
       thumbnail: "../images/Ferrari/LaFerrari/thumbnail.jpg",
@@ -267,7 +255,6 @@ function App() {
       slug: "laFerrari"
     },
     {
-      id: 14,
       name: "488 Spider",
       manufacturer: "Ferrari",
       thumbnail: "../images/Ferrari/488_Spider/thumbnail.jpg",
@@ -286,7 +273,6 @@ function App() {
       slug: "488_spider"
     },
     {
-      id: 15,
       name: "F8 Tributo",
       manufacturer: "Ferrari",
       thumbnail: "../images/Ferrari/F8_Tributo/thumbnail.jpg",
@@ -305,7 +291,6 @@ function App() {
       slug: "f8_tributo"
     },
     {
-      id: 16,
       name: "Chiron",
       manufacturer: "Bugatti",
       thumbnail: "../images/Bugatti/Chiron/thumbnail.jpg",
@@ -324,7 +309,6 @@ function App() {
       slug: "chiron"
     },
     {
-      id: 17,
       name: "Divo",
       manufacturer: "Bugatti",
       thumbnail: "../images/Bugatti/Divo/thumbnail.jpg",
@@ -343,7 +327,6 @@ function App() {
       slug: "divo"
     },
     {
-      id: 18,
       name: "Veyron 16.4",
       manufacturer: "Bugatti",
       thumbnail: "../images/Bugatti/Veyron_16.4/thumbnail.jpg",
@@ -366,42 +349,64 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar className="nav-bar" variant="dark" expand="lg" sticky="top">
+        <Navbar className="nav-bar" variant="dark" expand="lg">
           <Navbar.Brand href="/">Supercar Stats</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <NavItem>
-                <NavLink to="/lamborghini" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>Lamborghini</NavLink>
+                <NavLink exact to="/lamborghini" className="nav-link" activeClassName="active">Lamborghini</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/ferrari" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>Ferrari</NavLink>
+                <NavLink exact to="/ferrari" className="nav-link" activeClassName="active">Ferrari</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/mclaren" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>McLaren</NavLink>
+                <NavLink exact to="/mclaren" className="nav-link" activeClassName="active">McLaren</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/bugatti" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>Bugatti</NavLink>
+                <NavLink exact to="/bugatti" className="nav-link" activeClassName="active">Bugatti</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/about" className={({ isActive }) => "nav-link" + (isActive ? " active" : "")}>About</NavLink>
+                <NavLink exact to="/about" className="nav-link" activeClassName="active">About</NavLink>
               </NavItem>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/lamborghini" element={<Lamborghini cars={cars} />} />
-          <Route path="/lamborghini/:slug" element={<CarDetail cars={cars} />} />
-          <Route path="/ferrari" element={<Ferrari cars={cars} />} />
-          <Route path="/ferrari/:slug" element={<CarDetail cars={cars} />} />
-          <Route path="/mclaren" element={<McLaren cars={cars} />} />
-          <Route path="/mclaren/:slug" element={<CarDetail cars={cars} />} />
-          <Route path="/bugatti" element={<Bugatti cars={cars} />} />
-          <Route path="/bugatti/:slug" element={<CarDetail cars={cars} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/lamborghini">
+            <Lamborghini cars={cars} />
+          </Route>
+          <Route path="/lamborghini/:slug">
+            <CarDetail cars={cars} />
+          </Route>
+          <Route exact path="/ferrari">
+            <Ferrari cars={cars} />
+          </Route>
+          <Route path="/ferrari/:slug">
+            <CarDetail cars={cars} />
+          </Route>
+          <Route exact path="/mclaren">
+            <McLaren cars={cars} />
+          </Route>
+          <Route path="/mclaren/:slug">
+            <CarDetail cars={cars} />
+          </Route>
+          <Route exact path="/bugatti">
+            <Bugatti cars={cars} />
+          </Route>
+          <Route path="/bugatti/:slug">
+            <CarDetail cars={cars} />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="*">
+          <Redirect to="/" />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );

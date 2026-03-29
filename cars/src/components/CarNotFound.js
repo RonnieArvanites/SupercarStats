@@ -1,6 +1,7 @@
+import React from 'react'
 import { Container } from 'react-bootstrap';
 
-export default function CarNotFound({ cars }) {
+export default function CarNotFound( {cars} ) {
 
     return (
         <Container>
