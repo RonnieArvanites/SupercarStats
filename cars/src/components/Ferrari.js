@@ -1,20 +1,12 @@
-import React from 'react'
-import CarCard from './CarCard'
-import { Container, Row } from 'react-bootstrap';
+import CarGrid from './CarGrid'
 
-export default function Ferrari( {cars} ) {
+export default function Ferrari({ cars }) {
     //Filter just Ferrari cars
-    const ferrariCars = cars.filter( car => {
+    const ferrariCars = cars.filter(car => {
         return car.manufacturer === "Ferrari"
     });
 
     return (
-        <Container>
-            <Row className="row row-cols-3">
-                {ferrariCars.map(car => {
-                    return <CarCard car={car} ></CarCard>
-                })}
-            </Row>
-        </Container>
+        <CarGrid cars={ferrariCars} />
     );
 }
