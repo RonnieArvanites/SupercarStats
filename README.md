@@ -2,22 +2,22 @@
 This react project allows users to look up supercar stats from manufacturers such as Lamborghini, Ferrari, McLaren, and Bugatti. All the stats were taken from carbuzz.com and topspeed.com.
 ## Website Pages
 ### Home Page
-<img width="1440" height="814" alt="Screenshot 2026-03-29 at 2 55 23 PM" src="https://github.com/user-attachments/assets/24544547-b282-44b1-99ff-8bfd125fe97a" />
+<img width="1438" height="810" alt="Screenshot 2026-03-29 at 10 24 54 PM" src="https://github.com/user-attachments/assets/fb305972-ea5c-42dc-bc9f-7baee1ba0bf9" />
 
 ### Lamborghini Page
-<img width="1439" height="812" alt="Screenshot 2026-03-29 at 2 55 31 PM" src="https://github.com/user-attachments/assets/f49b4d02-9e2e-49aa-97df-503237709757" />
+<img width="1438" height="811" alt="Screenshot 2026-03-29 at 10 25 08 PM" src="https://github.com/user-attachments/assets/9570257e-dc30-4738-8817-5b18e459dc5d" />
 
 ### Ferrari Page
-<img width="1439" height="812" alt="Screenshot 2026-03-29 at 2 55 37 PM" src="https://github.com/user-attachments/assets/a3e07cf6-edc9-4384-a78b-888494385266" />
+<img width="1440" height="811" alt="Screenshot 2026-03-29 at 10 25 20 PM" src="https://github.com/user-attachments/assets/d290e5cb-be8a-48c0-a680-62bac5d84c60" />
 
 ### McLaren Page
-<img width="1439" height="812" alt="Screenshot 2026-03-29 at 2 55 49 PM" src="https://github.com/user-attachments/assets/1065e534-a9de-4eeb-a986-8fa2768d2f53" />
+<img width="1440" height="812" alt="Screenshot 2026-03-29 at 10 25 27 PM" src="https://github.com/user-attachments/assets/35de430d-8fc6-4766-9626-4385f9567c3a" />
 
 ### Bugatti Page
-<img width="1440" height="811" alt="Screenshot 2026-03-29 at 2 55 55 PM" src="https://github.com/user-attachments/assets/9751103c-4cd4-45d9-966c-45233f131990" />
+<img width="1440" height="810" alt="Screenshot 2026-03-29 at 10 25 33 PM" src="https://github.com/user-attachments/assets/48478c7c-ab14-4625-b618-459fe6ce2e97" />
 
 ### Indiviual Car Pages
-<img width="1437" height="813" alt="Screenshot 2026-03-29 at 2 56 11 PM" src="https://github.com/user-attachments/assets/d4283df9-cebe-4136-a0cf-05bb746dcf35" />
+<img width="1439" height="683" alt="Screenshot 2026-03-29 at 10 25 57 PM" src="https://github.com/user-attachments/assets/93bb0b3c-c45c-429c-ac7a-8aa65ef6631b" />
 
 ## Running Project
 1. npm install
