@@ -1,0 +1,10 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/cars"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 15
+    commit-message:
+      prefix: "deps"
+    rebase-strategy: "auto"
